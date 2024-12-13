@@ -1,0 +1,16 @@
+{
+  "name": "NodeBookCRUD-week6-MongoDB",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Benjamin Lamptey",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mongoose": "^8.8.4",
+    "nodemon": "^3.1.7"
+  }
+}
