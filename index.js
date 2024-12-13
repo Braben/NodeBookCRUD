@@ -5,8 +5,10 @@ const mongoose = require("mongoose");
 const {
   createBookcontroller,
   retrieveBookcontroller,
-  // updateBookcontroller,
-  //deleteBookcontroller,
+  updateBookcontroller,
+  deleteBookcontroller,
+  createAuthorcontroller,
+  retrieveAuthorcontroller,
 } = require("./controller");
 
 //server
@@ -20,8 +22,12 @@ server.use(bodyParser.json());
 //routes
 server.post("/book", createBookcontroller);
 server.get("/book/:_id?", retrieveBookcontroller);
-//server.put("/book", updateBookcontroller);
-//.delete("/book", deleteBookcontroller);
+server.put("/book", updateBookcontroller);
+server.delete("/book", deleteBookcontroller);
+
+//author routes
+server.post("/author", createAuthorcontroller);
+server.get("/author/:_id?", retrieveAuthorcontroller);
 
 //db connection
 mongoose
