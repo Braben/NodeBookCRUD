@@ -2,11 +2,15 @@ const AuthorModel = require("../models/authorModel");
 const { validationResult } = require("express-validator");
 
 const createAuthorcontroller = (req, res) => {
+  //validate request
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array()[0].msg });
   }
+
+  //get author data from request body
   const { name, email, country, bookId } = req.body;
+  //create a new author
   const author = new AuthorModel({
     name,
     email,

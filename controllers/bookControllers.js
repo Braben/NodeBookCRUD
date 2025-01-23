@@ -3,11 +3,15 @@ const { validationResult } = require("express-validator");
 
 ///create book
 const createBookcontroller = (req, res) => {
+  //validate request
+  ///---------------------------------//
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array()[0].msg });
   }
+  ////---------------------------///
 
+  //get book data from request body
   const { title, author, description } = req.body;
   //create a new book
   const book = new BookModel({
